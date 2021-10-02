@@ -4,7 +4,8 @@ var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 
-
+// setup http hostname and port for initialization you will have 
+// to delete the other hostname variable
 const http = require('http')
 const hostname = '127.0.0.1'
 const port = 3000
@@ -20,6 +21,7 @@ var app = express();
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
+// define server to allow it to run when you create the listen callback
 const server = http.createServer(app)
 
 app.use(cookieParser());
@@ -48,6 +50,8 @@ app.use(function(err, req, res, next) {
   res.render('error');
 });
 
+
+// create the listen callback to allow the server to run with script run dev
 server.listen(port, hostname, () => {
   console.log(`Server running at http://${hostname}:${port}/`)
 })
