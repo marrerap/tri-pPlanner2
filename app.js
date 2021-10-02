@@ -3,6 +3,7 @@ var express = require('express');
 var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
+const db = require('./model/trip.js')
 
 // setup http hostname and port for initialization you will have 
 // to delete the other hostname variable
