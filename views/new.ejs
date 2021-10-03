@@ -1,12 +1,34 @@
 <!DOCTYPE html>
 <html>
 
-<%-include('partials/head')  %> 
+<head>
+
+    <%-include('partials/head')  %>
+   
+
+</head>
+
+
 
 <body>
     <%-include('partials/navbar')  %>
     <h1><%= title %></h1>
-    <p>Welcome to <%= title %></p>
+    <h3>Add a <%= title %></h3>
+
+    <form method='post' class='mb-3'>
+
+        <input placeholder="Destination Name" class="form-control type=" text" name='trip_title' id='trip_title'>
+        <br />
+
+        <input placeholder="Departure Date" class="form-control type=" text" name='departure_date' id='departure_date'>
+        <br />
+        <div class="input-group mb-3">
+
+            <input placeholder="Return Date" class="form-control type=" text" name='return_date' id='return_date'>
+            <button class="btn btn-outline-secondary" type="submit">Add Trip</button>
+        </div>
+
+    </form>
 </body>
 
 </html>
