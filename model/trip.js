@@ -1,4 +1,4 @@
-module.exports = [
+ db = [
     {
         id: 1,
         title: 'Savannah',
@@ -12,3 +12,5 @@ module.exports = [
         return_date: '2022-02-27'
     },
 ];
+
+module.exports = db

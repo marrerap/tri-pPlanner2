@@ -1,9 +1,22 @@
 <!DOCTYPE html>
 <html>
-  <%-include('partials/head') %>
-  <body>
-    <%-include('partials/navbar') %> 
-    <h1><%= title %></h1>
-    <p>Welcome to <%= title %></p>
-  </body>
+<%-include('partials/head') %>
+
+<body>
+  <%-include('partials/navbar') %>
+  <h1><%= title %></h1>
+  <% db.forEach((trip) => { %>
+  <div class="card" style="width: 18rem;">
+    <div class="card-body">
+      <h5 class="card-title"><%= trip.title %></h5>
+      <span><%= trip.departure_date%></span>
+      <span><%= trip.return_date%></span>
+
+
+
+    </div>
+  </div>
+  <%    }) %>
+</body>
+
 </html>
