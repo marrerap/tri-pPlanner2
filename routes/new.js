@@ -22,12 +22,14 @@ router.post('/', function(req,res) {
   res.redirect('/')
 })
 
-router.post('delete/:id', function(req,res) {
+router.get('/new/:id', (req,res) => {
   const foundTrip = db.find((trip) => {
     return trip.id === parseInt(req.params.id)
   })
-  db.pop(foundTrip)
-  res.redirect('/')
+  res.render('details', {
+    title: 'Details',
+    trip: foundTrip
+  })
 })
 
 
