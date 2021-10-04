@@ -1,9 +1,10 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <%-include('partials/head') %>
-    <link rel="stylesheet" href='/public/stylesheets/style.css'>
-  </head>
+
+<head>
+  <%-include('partials/head') %>
+  <link rel="stylesheet" href='/public/stylesheets/style.css'>
+</head>
 
 
 <body>
@@ -13,13 +14,11 @@
   <div class="card" style="width: 18rem;">
     <div class="card-body">
       <h5 class="card-title"><%= trip.title %></h5>
-      <span><%= trip.departure_date%></span>
-      <span><%= trip.return_date%></span>
-      <br/>
+      <br />
       <a href="/new/<%= trip.id %>">View Trip Details</a>
       <form method="POST">
         <button type="submit" formaction="/delete/<% trip.id %>">Remove Trip</button>
-      </form> 
+      </form>
     </div>
   </div>
   <%    }) %>

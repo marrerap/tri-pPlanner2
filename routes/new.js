@@ -22,7 +22,7 @@ router.post('/', function(req,res) {
   res.redirect('/')
 })
 
-router.get('/new/:id', (req,res) => {
+router.get('/:id', (req,res) => {
   const foundTrip = db.find((trip) => {
     return trip.id === parseInt(req.params.id)
   })
