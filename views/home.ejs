@@ -15,6 +15,10 @@
       <h5 class="card-title"><%= trip.title %></h5>
       <span><%= trip.departure_date%></span>
       <span><%= trip.return_date%></span>
+      <a href="/new/<%= trip.id %>">View Trip Details</a>
+      <form method="POST">
+        <button type="submit" formaction="/delete/<% trip.id %>">Remove Trip</button>
+      </form> 
     </div>
   </div>
   <%    }) %>

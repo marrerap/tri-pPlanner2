@@ -22,5 +22,13 @@ router.post('/', function(req,res) {
   res.redirect('/')
 })
 
+router.post('delete/:id', function(req,res) {
+  const foundTrip = db.find((trip) => {
+    return trip.id === parseInt(req.params.id)
+  })
+  db.pop(foundTrip)
+  res.redirect('/')
+})
+
 
 module.exports = router;
